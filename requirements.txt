@@ -1,0 +1,20 @@
+# RAG Assistant - Requirements
+# Install all dependencies using: pip install -r requirements.txt
+
+# Document Parsing
+pymupdf>=1.23.0
+
+# Embeddings
+sentence-transformers>=2.2.2
+
+# Vector Database
+faiss-cpu>=1.7.4
+
+# LLM (Local via Ollama)
+ollama>=0.1.7
+
+# Numerical Computing
+numpy>=1.24.0
+
+# UI
+streamlit>=1.32.0
