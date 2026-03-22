@@ -21,7 +21,10 @@ sdist/
 var/
 wheels/
 documents/*
+!documents/.gitkeep
 vectorstore/*
+!vectorstore/.gitkeep
+src/
 share/python-wheels/
 *.egg-info/
 .installed.cfg

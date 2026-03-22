@@ -1,66 +1,3 @@
-# # generator.py
-# import ollama
-# from retriever import retrieve, format_context
-
-# def generate_answer(query, top_k=3):
-#     """Retrieve relevant chunks and generate an answer using Llama3."""
-    
-#     # Step 1 - Retrieve relevant chunks
-#     results = retrieve(query, top_k=top_k)
-    
-#     if not results:
-#         return "❌ No relevant information found in the documents.", []
-    
-#     # Step 2 - Format context from retrieved chunks
-#     context = format_context(results)
-    
-#     # Step 3 - Build the RAG prompt
-#     prompt = f"""You are a helpful assistant. You will be given context extracted from documents.
-# Answer the question directly and concisely using the information in the context.
-# Do NOT say "the context does not state" or add disclaimers.
-# Just answer naturally as if you know the information.
-# If truly nothing relevant exists in the context, only then say "I could not find this information in the documents."
-
-# Context:
-# {context}
-
-# Question: {query}
-
-# Answer:"""
-    
-#     # Step 4 - Generate answer using Llama3 via Ollama
-#     print("🤖 Generating answer with gemma:2b...")
-#     response = ollama.chat(
-#         model= "gemma:2b",#"llama3",
-#         messages=[{"role": "user", "content": prompt}]
-#     )
-    
-#     answer = response["message"]["content"]
-#     return answer, results
-
-
-# def display_answer(query, top_k=5):
-#     """Display the answer with source references."""
-    
-#     answer, results = generate_answer(query, top_k=top_k)
-    
-#     print("\n" + "="*60)
-#     print(f"❓ Question: {query}")
-#     print("="*60)
-#     print(f"💬 Answer:\n{answer}")
-#     # print("\n--- 📚 Sources Used ---")
-#     # for r in results:
-#     #     print(f"  Rank {r['rank']} | {r['filename']} | Distance: {r['distance']}")
-#     #     print(f"  Preview: {r['content'][:150]}...")
-#     #     print()
-
-
-# # Test it directly
-# if __name__ == "__main__":
-#     query = "what is the job title of Ahmad Mubarak?"
-#     display_answer(query)
-
-# generator.py
 import ollama
 from retriever import retrieve, format_context
 
@@ -140,9 +77,3 @@ def display_answer(query, top_k=5):
         print(f"  Rank {r['rank']} | {r['filename']} | Distance: {r['distance']}")
         print(f"  Preview: {r['content'][:150]}...")
         print()
-
-
-# # Test it directly
-# if __name__ == "__main__":
-#     query = "What is the salary of Ahmad Mubarak?"
-#     display_answer(query)

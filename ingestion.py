@@ -52,11 +52,3 @@ def chunk_documents(documents, chunk_size=500, chunk_overlap=50):
 
     print(f"✂️  Total chunks created: {len(chunks)}")
     return chunks
-
-
-# # Test it directly
-# if __name__ == "__main__":
-#     docs = load_documents("documents")
-#     chunks = chunk_documents(docs)
-#     print("\n--- Sample Chunk ---")
-#     print(chunks[0]["content"] if chunks else "No chunks found")

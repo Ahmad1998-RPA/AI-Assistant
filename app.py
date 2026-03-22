@@ -79,12 +79,6 @@ with st.sidebar:
     st.success("✅ Retriever ready")
     st.success("✅ Generator ready")
 
-    # st.divider()
-    # st.subheader("📁 Documents")
-    # if os.path.exists("documents"):
-    #     for f in os.listdir("documents"):
-    #         st.markdown(f"📄 `{f}`")
-
 # ── Chat Interface ────────────────────────────────────────
 st.subheader("💬 Ask a Question")
 
@@ -97,11 +91,6 @@ else:
             st.write(chat["question"])
         with st.chat_message("assistant"):
             st.write(chat["answer"])
-            # with st.expander("📚 Sources Used"):
-            #     for r in chat["sources"]:
-            #         st.markdown(f"**Rank {r['rank']}** | 📄 `{r['filename']}` | Distance: `{r['distance']}`")
-            #         st.caption(r["content"][:300] + "...")
-            #         st.divider()
 
     # Query input
     query = st.chat_input("Ask something about your documents...")
@@ -115,15 +104,7 @@ else:
                 answer, sources = generate_answer(query, top_k=top_k)
             st.write(answer)
 
-            # with st.expander("📚 Sources Used"):
-            #     for r in sources:
-            #         st.markdown(f"**Rank {r['rank']}** | 📄 `{r['filename']}` | Distance: `{r['distance']}`")
-            #         st.caption(r["content"][:300] + "...")
-            #         st.divider()
-
-        # Save to chat history
         st.session_state.chat_history.append({
             "question": query,
             "answer"  : answer,
-            # "sources" : sources
         })

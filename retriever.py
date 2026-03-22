@@ -41,17 +41,3 @@ def format_context(results):
     for r in results:
         context += f"[Source: {r['filename']}]\n{r['content']}\n\n"
     return context.strip()
-
-
-# # Test it directly
-# if __name__ == "__main__":
-#     query = "How much Salary Ahmad Mubarak is getting?"
-#     results = retrieve(query, top_k=3)
-    
-#     print("--- Retrieved Chunks ---")
-#     for r in results:
-#         print(f"\nRank {r['rank']} | Source: {r['filename']} | Distance: {r['distance']}")
-#         print(f"{r['content'][:200]}...")
-    
-#     print("\n--- Formatted Context ---")
-#     print(format_context(results))
