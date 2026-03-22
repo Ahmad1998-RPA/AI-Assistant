@@ -19,11 +19,6 @@ lib64/
 parts/
 sdist/
 var/
-src/
-documents/*
-!documents/.gitkeep
-vectorstore/*
-vectorstore/.gitkeep
 wheels/
 share/python-wheels/
 *.egg-info/
